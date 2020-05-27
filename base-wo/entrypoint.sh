@@ -3,7 +3,7 @@
 set -ex
 
 # custom path for files to override default files
-custom_path="$GITHUB_WORKSPACE/main/.github/ci"
+custom_path="$GITHUB_WORKSPACE/.github/ci"
 main_script="/main.sh"
 
 if [[ -d "$custom_path" ]]; then
