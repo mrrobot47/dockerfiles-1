@@ -9,7 +9,11 @@ RUN apt update && \
     git config --global user.name "nobody" && \
     bash wo && \
     wo stack install --nginx --mysql --php74 && \
-    rm wo && rm -rf /var/lib/apt/lists/*
+    rm wo
+
+RUN curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh; \
+    bash nodesource_setup.sh && \
+    apt install -y nodejs build-essential && rm -rf /var/lib/apt/lists/*
 
 COPY *.sh /
 RUN chmod +x /*.sh
